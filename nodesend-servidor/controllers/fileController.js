@@ -20,9 +20,9 @@ exports.uploadFile = async (req, res, next) => {
     
     const upload = multer(configurationMulter).single('file');
 
-
     upload( req, res, async (error) => {
-        //console.log(req.file);
+        
+        console.log(req.file);
 
         if(!error) {
             res.json({file: req.file.filename });
@@ -34,7 +34,6 @@ exports.uploadFile = async (req, res, next) => {
 }
 
 exports.deleteFile = async (req, res ) => {
-    //console.log(req.file)
 
     try {
         fs.unlinkSync(__dirname + `/../uploads/${req.file}`);
@@ -50,7 +49,7 @@ exports.download = async (req, res, next) => {
     // Obtiene el enlace
     const { file } = req.params
 
-    console.log(file);
+    //console.log(file);
 
     const link = await Links.findOne({ name: file });
 

@@ -1,4 +1,4 @@
-import React, {  useCallback, useContext } from 'react';
+import React, {  useCallback, useContext} from 'react';
 import { useDropzone } from 'react-dropzone';
 import appContext from '../context/app/appContext';
 import authContext from '../context/auth/authContext';
